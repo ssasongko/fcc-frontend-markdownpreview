@@ -1,6 +1,4 @@
-const INITIAL_MARKDOWN = `
-
-# Hello World ! 
+const INITIAL_MARKDOWN = `# Hello World ! 
 ## Write down your note here
 
 [freeCodeCamp](https://www.freecodecamp.org/)
