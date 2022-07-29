@@ -1,5 +1,7 @@
-const INITIAL_MARKDOWN = `# Hello World ! 
-## Write down your note here
+const INITIAL_MARKDOWN = `# Heading
+## Sub Heading
+
+![Random Swiss Photos](https://loremflickr.com/g/320/240/swiss)
 
 [freeCodeCamp](https://www.freecodecamp.org/)
 
@@ -16,6 +18,7 @@ Head 1 | Head 2 | Head 3
 item1 | item2 | item3
 item4 | item5 | item6
 item7 | item8 | item9
+
 > example of blockquote
 Inline \`code\`
 \`\`\`
@@ -23,7 +26,6 @@ Inline \`code\`
 function sum (x, y) {
   return x + y;
 }
-\`\`\`
-![Random Animals](https://loremflickr.com/320/240)`
+\`\`\``
 
 export default INITIAL_MARKDOWN

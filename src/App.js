@@ -1,30 +1,20 @@
-import { useState, useEffect } from "react"
-import { marked } from "marked"
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from "react"
 
 import INITIAL_MARKDOWN from "./utils/markdown"
+
 import Header from "./components/Header";
 import Cards from "./components/Cards";
-import Container from 'react-bootstrap/Container';
+import Footer from "./components/Footer";
+import Preview from "./components/Preview";
 
+import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import Footer from "./components/Footer";
 
 const App = () => {
 
-  // belum paham
-  marked.setOptions({
-    breaks: true
-  });
-
   const [textArea, setTextArea] = useState(INITIAL_MARKDOWN)
-  
-  useEffect(()=>{
-    console.info("success update")
-  },[textArea])
 
   return (
     <main className="bg-dark h-100">
@@ -38,21 +28,13 @@ const App = () => {
                   as="textarea"
                   className="p-3 h-100 border-0"
                   onChange={(e)=>{setTextArea(e.target.value)}}
-                  value={textArea}
-                  >
+                  value={textArea}>
                 </Form.Control>
             </Cards>
           </Col>
           <Col xs={12} md={6}>
             <Cards title="Preview here">
-              <div 
-                id="preview"
-                className="p-3"
-                dangerouslySetInnerHTML={{
-                  __html: marked(textArea,),
-                }}
-                >
-              </div>
+              <Preview val={textArea}/>
             </Cards>
           </Col>
         </Row>
